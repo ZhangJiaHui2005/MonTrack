@@ -1,0 +1,16 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
+  modules: ['nuxt-mongoose'],
+  runtimeConfig: {
+    mongodbUri: process.env.MONGODB_URI
+  },
+  mongoose: {
+    uri: process.env.MONGODB_URI,
+    options: {
+      dbName: "MonTrack"
+    },
+    modelsDir: "./server/models"
+  }
+})
